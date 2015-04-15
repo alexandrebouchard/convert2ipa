@@ -7,7 +7,7 @@ public class Doc
 {
   /**
    * 
-   * Summary [![Build Status](https://travis-ci.org/alexandrebouchard/convert2ipa.png?branch=master)](https://travis-ci.org/alexandrebouchard/convert2ipa)
+   * Summary 
    * -------
    * 
    * convert2ipa is a tool that was used for data pre-processing for the following paper:
