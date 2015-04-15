@@ -1,0 +1,95 @@
+a	5
+	Option 	FOLLOWED_BY 	'm' 	"ɐ̃" 		true  									// am = ɐ
+	Complex	FOLLOWED_BY 	'n' 	FFOLLOWED_BY 	'h' 	"ɐ" 		false  			// anh = ɐɲ
+	Option 	FOLLOWED_BY 	'n' 	"ɐ̃" 		true  									// an = ɐ̃
+	Option 	LAST 			"ɐ" 		false  											// terminal a = ɐ
+	Option 	DEFAULT 		"a" 	false  
+ã	1	"ɐ̃"  																		// ã = ɐ̃
+á	1	"a"   	
+b	1	"b"   						
+c	6
+	Option 	FOLLOWED_BY 	'h' 	"ʃ" 		true  									// ch = ʃ
+	Complex PRECEDED_BY 	's' 	FOLLOWED_BY_E 	"" 		false  					// sce (adding 's' is redundant)
+	Complex PRECEDED_BY 	's' 	FOLLOWED_BY_I 	"" 		false  					// sci (adding 's' is redundant)
+	Option 	FOLLOWED_BY_E 	"s" 	false  											// c + e = s + e
+	Option 	FOLLOWED_BY_I 	"s" 	false  											// c + i = s + i
+	Option 	DEFAULT 		"k" 	false  											// sca sco scu = sk.   ca co cu = k 			
+ç	1	"s" 
+d	1	"d"   	
+e	7
+	Option 	FOLLOWED_BY 	'm' 	"ẽ" 	true  									// en = ẽ
+	Option 	FOLLOWED_BY 	'n' 	"ẽ" 	true  									// en = ẽ
+	Complex	FIRST			LAST	"i" 	false  									// solo e = i
+	Option 	LAST 			"ɯ" 	false  											// terminal e = ɯ		// simpification: sometimes silent when last.  Also ɯ when in unstressed syllable
+	Complex FIRST LAST 		"i" 	false  											// solo e = i
+	Option 	FOLLOWED_BY_I 	"ɐi" 	true  											// ei = ɐi
+	Option 	DEFAULT 		"e" 	false     						
+é	1	"ɛ"  
+ê	1	"e"  
+f	1	"f"   					
+g	3
+	Option 	FOLLOWED_BY_E 	"ʒ" 		false   										// ge = ʒe
+	Option 	FOLLOWED_BY_I 	"ʒ" 		false  											// gi = ʒi
+	Option 	DEFAULT 		"g" 	false  											// followed by 'a' 'o' 'u' 'r' 'l' etc.
+h	1	""  								 										// silent
+i	3
+	Option 	FOLLOWED_BY 	'm'  	"ĩ" 	true  									// im = ĩ
+	Option 	FOLLOWED_BY 	'n'  	"ĩ" 	true  									// in = ĩ
+	Option 	DEFAULT 		"i" 	false  
+í	1	"i"   		
+j	1	"ʒ"   			
+k	1	"k"   																		// foreign only
+l	2
+	Option 	FOLLOWED_BY 	'h' 	"ʎ" 		true  									// lh = ʎ
+	Option 	DEFAULT 		"l" 	false  
+m	1	"m"   			
+n	2
+	Option 	FOLLOWED_BY 	'h' 	"ɲ" 	true 									// nh = ɲ
+	Option 	DEFAULT 		"n" 	false  
+o	9
+	Option 	FOLLOWED_BY 	'm' 	"õ" 	true  									// om = õ
+	Complex FOLLOWED_BY 	'n' 	FFOLLOWED_BY 	'h' 	"u" 	false  			// onh = uɲ
+	Option 	FOLLOWED_BY 	'n' 	"õ" 	true  									// on = õ
+	Option 	LAST 			"u" 	false		  									// terminal o = u
+	Option 	FOLLOWED_BY 	'u' 	"o" 	true  									// ou = o
+	Option 	FOLLOWED_BY 	'l' 	"ɔ" 		false  									// ol = ɔl
+	Option 	FOLLOWED_BY 	'r' 	"ɔ" 		false  									// or = ɔr
+	Option 	FOLLOWED_BY_O 	"o" 	true  											// oo = o ???
+	Option 	DEFAULT 		"o" 	false     													
+ó	1	"ɔ"   
+õ	1	"õ"   				
+p	1	"p"   
+q	1	"k"  	   
+r	3
+	Option 	FOLLOWED_BY 	'r' 	"r" 	true					  				//	 rr = r
+	Option 	FIRST 			"r" 	false  											// first r = r
+	Option 	DEFAULT 		"ɾ" 		false     					
+s	9																				// simplification: doesn't take into account subsequent word if at the end of word  		
+	Option 	FIRST 			"s" 	false 											// initial s = s
+	Complex PRECEDED_BY_VOWEL 		FOLLOWED_BY_VOWEL 		"z" 	false 			// vowel + s + vowel = z 
+	Option 	FOLLOWED_BY 	's' 	"s" 	true 									// ss = s
+	Option 	FOLLOWED_BY 	'ç' 	"s"	 	true 									// sç = s 
+	Option 	PRECEDED_BY_CONSONANT 	"s" 	false 									// cons + s = cons + s
+	Option 	LAST 			"ʃ" 		false 											// terminal s = ʃ 
+	Option 	FOLLOWED_BY_UNVOICEDC 	"ʃ" 		false 									// s + unvoiced cons = ʃ + cons
+	Option 	FOLLOWED_BY_CONSONANT 	"ʒ" 		false 									// s + voiced cons = s + ʒ
+	Option 	DEFAULT "s" false  			
+t	1	"t"  				 								
+u	5
+	Complex PRECEDED_BY 	'q' 	FOLLOWED_BY_E 	"" 		false  					// Silent u 	-  que = qe
+	Complex PRECEDED_BY 	'q' 	FOLLOWED_BY_I 	"" 		false  					// Silent u	-  qui = qi
+	Option 	FOLLOWED_BY 	'm' 	"ũ" 	true 			 						// un = ũ
+	Option 	FOLLOWED_BY 	'n' 	"ũ" 	true  									// un = ũ
+	Option 	DEFAULT 		"u" 	false    				
+ú	1	"u"   					
+ü	1	"u"   																		// brazilian portuguese only
+v	1	"v"   						
+w	1	"u" 		  																// foreign only
+x	5
+	Complex PRECEDED_BY_VOWEL 		FOLLOWED_BY_VOWEL 		"z" 	false	 		// vowel + x + vowel = z 
+	Option 	FOLLOWED_BY 	'c' 	"s" 	true 									// xc = s 
+	Option 	FIRST 			"ʃ" 		false 											// initial x = ʃ
+	Option 	FOLLOWED_BY_I 	"ks" 	false						  					// xi = ksi
+	Option 	DEFAULT 		"s" 	false   
+y	1	"ʝ"   																		// foreign only
+z	1	"z"   

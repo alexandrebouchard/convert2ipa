@@ -1,0 +1,97 @@
+options { JDK_VERSION = "1.6"; STATIC = false;   JAVA_UNICODE_ESCAPE = true; }
+PARSER_BEGIN(AustroParser)
+package ventris.austroparser;
+
+import java.util.*;
+import java.io.*;
+
+import ventris.Austro2Corpus.Entry;
+
+public class AustroParser 
+{
+	private List<Entry> entries = new ArrayList<Entry>();
+	private HashMap<String,String> parentMaps = new HashMap<String,String>();
+
+  public AustroParser(File file) throws FileNotFoundException
+  {
+    this(new FileInputStream(file), "UTF-8");
+  }
+}
+PARSER_END(AustroParser)
+
+SKIP : { " " |	"\r" |	"\t" }
+TOKEN : 
+{
+	< QUOTE: "\"" >
+|	
+	< NUMBER_STRING: ( ["0"-"9","."] )+ >
+}
+private Tree<String> tree() :         { Tree<String> result; }
+{
+	result = subtree()     
+	";"
+	{ return result; }
+}
+private Tree<String> subtree() :      { Tree result; }
+{
+	result = internal() 
+	{ return result; }
+|
+	result = leaf()     
+	{ return result; } 
+}
+private Tree<String> leaf() :         { String name; }
+{
+	name = name()     
+	{ return new Tree(name); }
+}
+private Tree<String> internal() :     { List<Tree<String>> children; String name; }
+{
+	"("
+	children = branchList()
+	")"
+	name = name()				
+	{ return new Tree<String>(name, children); }
+}
+private List<Tree<String>> branchList() :   
+{ 
+	List<Tree<String>> branches = new ArrayList<Tree<String>>(); 
+	Tree<String> currentTree; 
+}
+{
+	currentTree = branch() 	
+	{ branches.add(currentTree); }
+	( 
+		","
+		currentTree = branch() 	
+		{ branches.add(currentTree); }
+	)*											
+	{ return branches; }
+}
+private Tree<String> branch() : 			{ Tree<String> result; }
+{
+	result = subtree()
+	length(result.getLabel())
+	{ return result; }
+}
+private String name() : 			{ Token t; }
+{
+	t = <NODE_NAME_STRING> 	
+	{ return t.image; }
+|
+	{ return nextInternalNodeName(); }
+}
+private void length(String label) : 			{ Token t; }
+{
+	":"
+	t = <NUMBER_STRING>
+	{ 
+		Language lang = new Language(label);
+		Double length = Double.parseDouble(t.image); 
+		branchLengths.put(lang, length);
+	}
+}
+
+
+
+

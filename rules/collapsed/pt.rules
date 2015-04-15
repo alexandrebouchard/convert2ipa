@@ -1,0 +1,158 @@
+#### http://en.wikipedia.org/wiki/Portuguese_orthography
+
+#### EUROPEAN PORTUGUESE IPA CONVERTER
+
+cons := [cdfghjklmnpqrstvwxyz]
+consfinal := [cdfghjklmnpqrstvwxyz_]
+vow := [aáàâäeéèêëiíìîïoóòôöuúùûü]
+letter := [cdfghjklmnpqrstvwxyzaáàâäeéèêëiíìîïoóòôöuúùûü]
+
+a := [aáàâä]
+e := [eéèêë]
+i := [iíìîï]
+o := [oóòôö]
+u := [uúùûü]
+ei := [eéèêëiíìîï]
+
+unvoiced := [cfhkpqst]
+voiced := [bdgjlmnrvwz]
+
+# stress is handle approximately with these two conjunctions
+# TODO: there are exceptions
+stressed1 := syllable=-1,endsWithVowel=false
+stressed2 := syllable=-2,endsWithVowel=true
+
+# Diacritics --- easy
+
+á -> a
+â -> a
+ã -> a    # TODO: actually, nasalized: ɐ̃
+à -> a
+ç -> s
+é -> e
+ê -> e
+í -> i
+ó -> o
+ô -> o
+õ -> o    # TODO: actually, nasalized: õ
+ú -> u
+ü -> u
+
+# Some important digraphs
+
+ch -> ʃ
+lh -> l
+nh -> n
+rr -> r
+ss -> s
+sç -> s
+xc -> s
+
+# conditional digraphs  TODO:  using capitals to denote nasalized vowels
+
+
+/gu/$ei -> g
+/gu/ -> gu
+/{in,im,ín,ím}/$consfinal -> im  # TODO: actually, ĩ
+/{on,om,ôn,ôm}/$consfinal -> om   # TODO: actually, õ
+
+/qu/$ei -> k
+/qu/ -> ku
+/{un,um,ún,úm}/$consfinal -> um   # TODO: actually, ũ
+
+# Diphtongs 
+# can generally be analysed as hiatuses, except ei
+ei -> ai
+
+# Main orthographical rules
+
+# A
+a -> a
+
+# B
+b -> b 
+
+# C
+/{sc,c}/$ei -> s
+c -> k
+
+# D
+d -> d
+
+# E 
+e -> e
+
+# F 
+f -> f 
+
+# G
+/g/$ei -> ʒ
+g -> g
+
+# H
+h -> 
+
+# I
+i -> i
+
+# J
+j -> ʒ
+
+# K 
+# foreign only
+k -> k
+
+# L
+l -> l
+
+# M
+m -> m
+
+# N
+n -> n
+
+# O
+o -> o
+
+# P
+p -> p
+
+# Q
+q -> k
+
+# R : TODO: approximation, should be begining and end of syllable
+r -> r
+
+# S
+_/s/ -> s
+$vow/s/$vow -> z
+$cons/s/ -> s
+# In most of Portugal, and in Rio de Janeiro and some northeastern states of 
+# Brazil, syllable-final sibilants have become postalveolar, /ʃ/ before a 
+# voiceless consonant or at the end of a word, and /ʒ/ before a voiced 
+# consonant: isto /'iʃtu/, turismo /tu'riʒmu/.
+/s/_ -> ʃ  
+/s/$unvoiced -> ʃ
+/s/$voiced -> ʒ
+s -> s
+
+# T	
+t -> t
+
+# U
+u -> u
+
+# V	  (brazilian portuguese only)																	
+v -> v  			
+
+# W  (foreign only)
+w -> u
+
+# X
+$vow/x/$vow -> z
+_/x/ -> ʃ
+/x/$i -> ks
+x -> s
+
+# Z
+z -> z 

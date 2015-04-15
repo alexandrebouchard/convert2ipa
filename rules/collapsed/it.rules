@@ -1,0 +1,67 @@
+# http://en.wikipedia.org/wiki/Italian_spelling
+
+a := [aáàâäã]
+e := [eéèêë]
+i := [iíìîï]
+o := [oóòôö]
+u := [uúùûü]
+aou := [aáàâäoóòôöuúùûü]
+ei := [eéèêëiíìîï]
+vow := [aáàâäeéèêëiíìîïoóòôöuúùûü]
+unvoiced := [cfhkpqst]
+voiced := [bdgjlmnrvwz]
+
+stressed := syllable=-2
+unstressed := syllable!=-2
+
+$a -> a
+
+/ch/$ei -> k
+c -> k
+cq -> k
+
+# E: When unstressed, it is pronounced /e/.
+# When stressed, it is pronounced /ɛ/ in some words and /e/ in others.
+# In dictionaries, or whenever one wants to avoid confusion,
+# unstressed /e/ is e, stressed /e/ is é and stressed /ɛ/ is è
+è -> e
+é -> e
+e -> e
+
+# G: Pronounced /dʒ/ before E and I.
+
+/gh/$ei -> g
+$i -> i
+o -> o
+qu -> kw
+/s/$unvoiced -> s
+/s/$voiced -> z
+/{sce,sci}/$vow -> ʃʃ
+/sc/$ei -> ʃʃ
+/sc/$aou -> sk
+/sch/$ei -> sk
+$vow/s/$vow -> z
+
+# U: Pronounced /u/, except when unstressed and followed by another vowel, in
+# which case it is pronounced /w/. Sometimes it is still syllabic even when
+# unstressed and followed by another vowel, however dictionaries always give
+# syllabations of words so it's easy to distinguish them.
+/u/$vow -> w when $unstressed
+g/ua/ -> wa
+$u -> u
+
+# X: Pronounced /ks/ (rare in native Italian words).
+x -> ks
+
+# Y: Not occurring in any native Italian word.
+y -> i
+
+z -> z
+
+# Errors:
+# e o -> ɛ ɔ sometimes on stressed syllables
+# sua not-> swa, suo not-> swo (stressed)
+# Apostrophes
+
+# Things to fix
+# http://www.answers.com/topic/international-phonetic-alphabet-for-italian

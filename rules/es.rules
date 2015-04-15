@@ -1,0 +1,97 @@
+# http://en.wikipedia.org/wiki/Spanish_phonology
+# Do we trust this?
+# http://en.wikibooks.org/wiki/Spanish/Pronunciation
+
+a := [aáàâäã]
+e := [eéèêë]
+i := [iíìîï]
+o := [oóòôö]
+u := [uúùûü]
+aou := [aáàâäoóòôöuúùûü]
+ei := [eéèêëiíìîï]
+vow := [aáàâäeéèêëiíìîïoóòôöuúùûü]
+unvoiced := [cfhkpqst]
+voiced := [bdgjlmnrvwz]
+
+$a -> a
+
+/c/$ei -> s
+c -> k
+ch -> ʧ
+
+é -> e
+
+
+/g/$ei -> x
+/gu/$ei -> g
+g -> g
+h ->
+
+# H: Silent, unless combined with c (see above). Hu- or hi- followed by another
+# vowel at the start of the word stand for /w/ (English w) and /j/ (English y).
+# Also used in foreign words like hámster, where it is pronounced like a
+# Spanish j (see below).
+_/{hi,hu}/$vow -> w
+$i -> i
+
+j -> x
+
+ll -> ʎ
+ñ	-> ɲ
+
+$o -> o
+
+# Q: Like q in quit. As in English, it is always followed by a u, but before e
+# or i, the u is silent (líquido is pronounced /'li.ki.δo/). The English /kw/
+# sound is normally written cu in Spanish (cuanto), although qu can be used for
+# this sound in front of a or o (quásar, quórum).
+/qu/$ei -> k
+q -> k
+/qu/[aáoó] -> kw
+
+# R: This has two pronunciations, neither of which exist in English. The 'soft'
+# pronunciation sounds like American relaxed pronunciation of tt in "butter",
+# and is written r (always written r). The 'hard' pronunciation is a multiply
+# vibrating sound, similar to Scottish rolled r (generally written rr). 'Hard'
+# r is also the sound of r at the start of a word or after l, n or s.
+rr -> r
+r -> ɾ # Includes the trills after [_nlrs]
+
+/u/$vow -> w
+v -> b
+w -> b # u?
+x -> ks
+
+# Y: Technically, it is simply the preferred spelling of i + vowel at the
+# beginning of a word or vowel + i at the end of a word (yeso rather than ieso,
+# hay rather than hai), and should be pronounced exactly as i. However, in some
+# places it is identical to English y. In Argentina is pronounced similar to
+# the English sh in she, or English j in jump, and in Chile is pronounced /ʒ/
+# (like English si in vision).
+y	-> ʝ # voiced palatal fricative   "y" (yo, yerro, yerba)
+
+# Z: Always the same sound as a soft c i.e. either /θ/ (most of Spain) or /s/
+# (elsewhere). See c for details.
+z -> s
+
+#cc -> ks
+#	Complex PRECEDED_BY 	's' 	FOLLOWED_BY_E 	"" 		false					// sce (adding 's' is redundant)
+#	Complex PRECEDED_BY 	's' 	FOLLOWED_BY_I 	"" 		false 					// sci (adding 's' is redundant)
+#i	8
+#	Option 	PRECEDED_OR_FOLLOWED_BY	'a' 	"y" 	false  							// ai or ia = y + a
+#	Option 	PRECEDED_OR_FOLLOWED_BY 'e' 	"y" 	false  							// ei or ie = y + e
+#	Option 	PRECEDED_OR_FOLLOWED_BY 'o' 	"y" 	false  							// oi or io = y + o
+#	Option 	FOLLOWED_BY_U 	"y" 	false  			  								// iu = y + u			  
+#	Option 	DEFAULT 		"i" 	false  
+#m	2
+#	Option 	FOLLOWED_BY_VOWEL 		"m" 	false  
+#	Option 	DEFAULT 		"n" 	false  
+#n	2  
+#	Option 	FOLLOWED_BY 	'g' 	"ŋ" 	false  
+#u	3
+#	Complex	PRECEDED_BY 	'q' 	FOLLOWED_BY_E 	""		false  					// Silent u
+#	Complex PRECEDED_BY 	'q' 	FOLLOWED_BY_I 	"" 		false  					// Silent u
+#	Option 	DEFAULT 		"u" 	false  
+#y	2
+#	Complex	FIRST 			LAST 	"i" 			false  
+#	Option	DEFAULT 		"ʝ" 		false  

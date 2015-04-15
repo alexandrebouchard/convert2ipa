@@ -1,0 +1,133 @@
+# http://en.wikipedia.org/wiki/Italian_spelling
+
+a := [aáàâäã]
+e := [eéèêë]
+i := [iíìîï]
+o := [oóòôö]
+u := [uúùûü]
+aou := [aáàâäoóòôöuúùûü]
+ei := [eéèêëiíìîï]
+vow := [aáàâäeéèêëiíìîïoóòôöuúùûü]
+unvoiced := [cfhkpqst]
+voiced := [bdgjlmnrvwz]
+
+stressed := syllable=-2
+unstressed := syllable!=-2
+
+$a -> a
+
+# C: pronounced /tʃ/ before E and I, and /k/ elsewhere.
+# /tʃa/, /tʃo/, /tʃu/ are spelt CIA, CIO, CIU,/ke/ and
+# /ki/ CHE and CHI respectively.
+/ch/$ei -> k
+/ci/$aou -> ʧ
+/c/$ei -> ʧ
+/cc/$ei -> tʧ
+c -> k
+/nc/$ei -> nʧ
+nc -> ŋk
+cq -> k
+
+# E: When unstressed, it is pronounced /e/.
+# When stressed, it is pronounced /ɛ/ in some words and /e/ in others.
+# In dictionaries, or whenever one wants to avoid confusion,
+# unstressed /e/ is e, stressed /e/ is é and stressed /ɛ/ is è
+è -> ɛ
+é -> e
+/e/$vow -> ɛ
+e -> e when $unstressed
+e -> ɛ
+
+# G: Pronounced /dʒ/ before E and I.
+# GLI is pronounced /ʎʎi/ (or simply /ʎʎ/ if I is unstressed and followed by
+# another vowel) in most words. For words in which it is pronounced /ɡli/ some
+# dictionaries give the full phonetic transcription. GN is pronounced /ɲɲ/.
+# Exceptions, e. g. words derived from foreign proper names (e. g. wagneriano
+# from Wagner) are extremely rare. Elsewhere it is pronounced /ɡ/.
+# /dʒa/, /dʒo/, /dʒu/, /ɡe/ and /ɡi/ are spelt GIA, GIO, GIU, GHE and GHI
+# respectively.
+_/gli/$vow -> ʎ
+/gli/$vow -> ʎʎ
+gli -> ʎʎi
+_/gn/ -> ɲ
+gn -> ɲɲ
+/gi/$aou -> ʤ
+/gh/$ei -> g
+/{ge,gi}/$vow -> ʤ
+/g/$ei -> ʤ
+/gg/$ei -> dʤ
+
+# I: Pronounced /i/, except when unstressed and followed by another vowel, in
+# which case it is pronounced /j/ (or simply dropped if preceded by a
+# postalveolar or palatal /tʃ/, /dʒ/, /ʃʃ/, /ʎʎ/ or /ɲɲ/). Sometimes it is
+# still syllabic even when unstressed and followed by another vowel, however
+# dictionaries always give syllabations of words so it's easy to distinguish
+# them.
+# postalveolar|palatal/i/j -> TODO
+/i/$vow -> j
+$i -> i
+
+# O: When unstressed, it is pronounced /o/. When stressed, it is pronounced /ɔ/
+# in some words and /o/ in others. In dictionaries, or whenever one wants to
+# avoid confusion, unstressed /o/ is o, stressed /o/ is ó and stressed /ɔ/ is
+# ò.
+ó -> o
+ò -> ɔ
+o -> o when $unstressed
+o -> ɔ
+
+# Q: Only occurring in groups QUA, QUE, QUI and QUO pronounced /kwa/, /kwe/ or
+# /kwɛ/, /kwi/ and /kwo/ or /kwɔ/ respectively.
+/qu/$vow -> kw
+
+# S: Before a voiceless consonant (and when doubled) it is pronounced /s/.
+# Before a voiced consonant it is pronounced /z/. Between a word boundary and a
+# vowel, or between a consonant and a vowel, it is pronounced /s/. Between two
+# vowels it is pronounced /s/ in some words and /z/ in others. (However minimal
+# pairs are really very few.) Dictionaries often distinguish the latter, e. g.
+# as s or ʃ. SCI and SCE are pronounced /ʃʃi/ (or simply /ʃʃ/ if I is
+# unstressed and followed by another vowel) and /ʃʃe/ or /ʃʃɛ/ respectively.
+# /ski/ and /ske/ are spelt SCHI and SCHE.
+ss -> s # Really?
+/s/$unvoiced -> s
+/s/$voiced -> z
+/{sce,sci}/$vow -> ʃʃ
+_/sc/$ei -> ʃ # ???
+/sc/$ei -> ʃʃ
+/sc/$aou -> sk
+/sch/$ei -> sk
+$vow/s/$vow -> z
+
+# U: Pronounced /u/, except when unstressed and followed by another vowel, in
+# which case it is pronounced /w/. Sometimes it is still syllabic even when
+# unstressed and followed by another vowel, however dictionaries always give
+# syllabations of words so it's easy to distinguish them.
+/u/$vow -> w when $unstressed
+g/ua/ -> wa
+$u -> u
+uo -> wo when $unstressed
+uo -> wɔ when $stressed
+ue -> we when $unstressed
+ue -> wɛ when $stressed
+
+# X: Pronounced /ks/ (rare in native Italian words).
+x -> ks
+
+# Y: Not occurring in any native Italian word.
+y -> i
+
+# Z: It is a phoneme string /ts/ in some words, and /dz/ in others, and there
+# are no rules for determining which. Most words of Greek (and other foreign)
+# origin have /dz/ however. Most dictionaries indicate words with /dz/ by some
+# means, such as z or ʒ.
+_/z/ -> dz # Counterexample: zoccolo (ts)
+z -> ts # Counterexample: Marzabotto (dz)
+zz -> tts # Counterexample: mezzo (ddz)
+
+# Errors:
+# e o -> ɛ ɔ sometimes on stressed syllables
+# sua not-> swa, suo not-> swo (stressed)
+# Apostrophes
+
+# Things to fix
+# http://www.answers.com/topic/international-phonetic-alphabet-for-italian

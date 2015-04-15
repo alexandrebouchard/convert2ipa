@@ -1,0 +1,127 @@
+a	4
+	Option	FOLLOWED_BY_U	"ao"	true											// au = ao
+	Option	FOLLOWED_BY_A	"a"		true											// aa = a
+	Option	FOLLOWED_BY		'h'		"a"		true 									// ah = a
+	Option	DEFAULT			"a"		false 
+ä	2
+	Option	FOLLOWED_BY_U	"ɔø"		true					 						// äu = ɔø
+	Option	DEFAULT			"ɛ"		false 
+b	3	
+	Option	LAST			"p"		false											// terminal b = p 																						// final b = p
+	Complex	NOT_FIRST		FOLLOWED_BY_CONSONANT	"p"		false 					// Simplification: b not first & followed by consonant = 'p' (should be when part of final consonant cluster, or final in word stem, followed by consonant)
+	Option	DEFAULT			"b"		false				 
+ß	1	"s" 
+c	11																				//	chs = xs  OR çs OR occasionally ks ?/ preprocessed
+	Complex	PRECEDED_BY		's'		FOLLOWED_BY		'h'		"ʃ"		true		 	// sch = ʃ
+	Option	PRECEDED_BY		's'		"sk"			false							// sc = sk (does this combination ever occur without h?)
+	Option	FOLLOWED_BY		'k'		"k"				true							// ck = k	
+	Complex	PRECEDED_BY_A	FOLLOWED_BY		'h'		"x"		true					// a + ch = x
+	Complex PRECEDED_BY_O	FOLLOWED_BY		'h'		"x"		true 					// o + ch = x
+	Complex PRECEDED_BY_U	FOLLOWED_BY		'h'		"x"		true					// u + ch = x			(except eu or äu + ch => ç, preprocessed)
+	Option	FOLLOWED_BY		'h' 	"ç"		true 									// other vowel or consonant + ch = ç,   Simplification: In proper names and words of greek origin is sometimes 'k'
+	Option	FOLLOWED_BY_I	"ts"	false											// ci = ts + i  (foreign)
+	Option	FOLLOWED_BY_E	"ts"	false											// ce = ts + e  (foreign)
+	Option	FOLLOWED_BY		'ä'		"ts"	false									// cä = ts + ä  (foreign)
+	Option	DEFAULT			"k"		false											// solo consonant c = k (foreign)
+d	3
+	Option	LAST			"t"		false											// final d = t
+	Complex NOT_FIRST		FOLLOWED_BY_CONSONANT	"t"		false		 			// Simplification: d not first & followed by consonant = 't' (should be when part of final consonant cluster, or final in word stem, followed by consonant)
+	Option	DEFAULT			"d"		false				
+e	10																				// simplified, actually e should only take on 'e' or 'ɛ' if it is in the stressed syllable in the following conditions
+	Complex FOLLOWED_BY_CONSONANT	FFOLLOWED_BY_CONSONANT	"ɛ"		false		 	// e + cons +cons = ɛ
+	Option	FOLLOWED_BY		'ß'		"ɛ"		false									// eß = ɛs
+	Option	FOLLOWED_BY_E	""		false											// ee depends on next char
+	Complex	PRECEDED_BY_E	FOLLOWED_BY		'h'		"əe"	true					// eeh = əe
+	Complex	PRECEDED_BY_E	FOLLOWED_BY_I	"əae"	true							// eei = əae
+	Option	PRECEDED_BY_E	"e"		false											// ee cons = e  (except in bee or gee words, preprocessed)
+	Option	FOLLOWED_BY		'h'		"e"		true									// eh = e
+	Option	FOLLOWED_BY_I	"ae"	true											// ei = ae
+	Complex	FOLLOWED_BY_CONSONANT	FFOLLOWED_BY_VOWEL		"e"		false			// e cons vowel = e cons vowel
+	Option	DEFAULT			"ə"		false 											// unstressed e = ə
+f	2
+	Option	FOLLOWED_BY		'f'		"f"		true					 	  			// ff =f
+	Option	DEFAULT			"f"		false 		
+g	6
+	Option	FOLLOWED_BY 	'n'		"gn"	true									// gn = gn
+	Complex PRECEDED_BY_I	LAST	"ç"		false									// final ig = Iç
+	Complex PRECEDED_BY_I	FOLLOWED_BY_CONSONANT	"ç"		false					// ig + cons = Iç + cons
+	Option	LAST			"k"		false											// final g = k
+	Complex NOT_FIRST		FOLLOWED_BY_CONSONANT	"k"		false 					// Simplification: g not first & followed by consonant = 'k' (should be when part of final consonant cluster, or final in word stem, followed by consonant)
+	Option	DEFAULT			"g"		false		 	
+h	2	 		
+	Option	FOLLOWED_BY		'r' 	""		false			 	  					// h generally silent before r
+	Option	DEFAULT	 		"h"		false                                           // simplified: h is only pronounced at beginning of stem
+i	3
+	Option	FOLLOWED_BY_E	"i"		true				 							// ie = i
+	Option	FOLLOWED_BY	 	'h'		"i"		true			 						// ih = i  simplified - actually only applies to stressed syllables		  
+	Option	DEFAULT 		"I"		false		 									// i = I when stressed and followed by multiple consonants, or followed by ß. or is only vowel letter in unstressed syllable
+j	1		"j" 			
+k	1		"k"
+l	2 			
+	Option	FOLLOWED_BY		'l'		"l"		true		 							// ll = l
+	Option	DEFAULT			"l"		false 
+m	2
+	Option	FOLLOWED_BY		'm'		"m"		true									// mm = m 
+	Option	DEFAULT			"m"		false 
+n	4
+	Option	FOLLOWED_BY		'g'		"ŋ"		true 									// ng = ŋ
+	Option	FOLLOWED_BY		'k'		"ŋk"	true 									// nk = ŋk
+	Option	FOLLOWED_BY		'n'		"n"		true			 					    // nn = n
+	Option	DEFAULT			"n"		false 
+o	4
+	Option	FOLLOWED_BY_O	"o" 	true											// oo = o
+	Option	FOLLOWED_BY		'h'		"o"		true									// oh = o
+	Complex	FOLLOWED_BY_CONSONANT	FFOLLOWED_BY_CONSONANT	"ɔ"		false	 		// o cons cons = ɔ  
+	Option	DEFAULT			"o"		false 																									// o cons vowel  or terminal o cons = o
+ö	3
+	Option	FOLLOWED_BY 	'h'		"ø"		true									// öh = ø
+	Complex	FOLLOWED_BY_CONSONANT 	FFOLLOWED_BY_CONSONANT	"œ"		false	 		// ö cons cons = œ 
+	Option	DEFAULT			"ø"		false											// ö cons vowel  or terminal o cons = ø
+p	2
+	Option	FOLLOWED_BY		'h'		"f"		true			 						// ph = f
+	Option	DEFAULT			"p"		false
+q	2
+	Option	FOLLOWED_BY_U	"kv"	true					 						// qu = kv
+	Option	DEFAULT			"k"		false
+r	2
+	Option	FOLLOWED_BY		'r'		"r"		true 									// rr
+	Option	DEFAULT			"r"		false 
+s	12
+	Complex PRECEDED_BY		'x'		FOLLOWED_BY		't'		"st"	true			// chst = preproscessed xst, dont change s or t
+	Option	FOLLOWED_BY		'c'		""		false									// sc depends on next char
+	Complex FIRST	 		FOLLOWED_BY		'p'		"ʃp"		true					// starting sp = ʃp 				
+	Complex FIRST			FOLLOWED_BY		't'		"ʃt"		true					// starting st = ʃt 				
+	Complex PRECEDED_BY_CONSONANT	FOLLOWED_BY		'p'		"ʃp"		true			// cons + sp = ʃp 	simplification: start of a stem is usually after a consonant			
+	Complex PRECEDED_BY_CONSONANT 	FOLLOWED_BY		't'		"ʃt"		true			// cons + st = ʃt     simplification: start of a stem is usually after a consonant			
+	Complex FIRST 			FOLLOWED_BY_VOWEL		"z"		false					// starting s + vowel = z 				
+	Complex PRECEDED_BY_VOWEL		FOLLOWED_BY_VOWEL		"z"		false			// vowel + s + vowel = z
+	Complex PRECEDED_BY_UNVOICEDC	FOLLOWED_BY_VOWEL		"s"		false			// unvoiced cons + s + vowel = s
+	Option	FOLLOWED_BY_VOWEL		"z"		false									// voiced cons + s + vowel = z
+	Option	FOLLOWED_BY		's'		"s"		true									// ss = s
+	Option	DEFAULT 		"s"	 	false											// s + cons, etc. = s
+t	4
+	Option	FOLLOWED_BY		'z'		"ts"	true									// tz = ts 
+	Option	FOLLOWED_BY		'h'		"t"		true									// th = t most of the time
+	Option	FOLLOWED_BY		't'		"t"		true									// tt = t 
+	Option	DEFAULT			"t"		false  								
+u	5
+	Complex FOLLOWED_BY		'c'		FFOLLOWED_BY	'h'		"u" 	false			// u + ch = u + ch
+	Option	FOLLOWED_BY		'h'		"u"		true									// uh = u
+	Complex	FOLLOWED_BY_CONSONANT	FFOLLOWED_BY_CONSONANT	"U"		false 			// u cons cons = U
+	Option	FOLLOWED_BY_U	"uU"	true											// uu = uU		// rare in german
+	Option	DEFAULT			"u"		false 											// u cons vowel or terminal u cons = u
+ü	4
+	Complex FOLLOWED_BY		'c'		FFOLLOWED_BY	'h'	 	"y"		false			// ü + ch = y +ch
+	Option	FOLLOWED_BY		'h'		"y"		true 									// üh = y
+	Complex FOLLOWED_BY_CONSONANT	FFOLLOWED_BY_CONSONANT	"Y"		false		 	// ü cons cons = Y
+	Option	DEFAULT			"y"		false 											// u cons vowel or  terminal u cons = y
+v	1	"f"																			// v = f
+w	1	"v"																			// w = v
+y	1	"y"																			// foreign
+z	1	"ts"																		// z = ts	
+ə	1	"ə" 																		// preprocessed
+ɛ	1	"ɛ" 																			// preprocessed
+ç	1	"ç" 																		// preprocessed
+x	1	"x" 																		// preprocessed
+U	1	"U" 																		// preprocessed
+Y	1	"Y" 																		// preprocessed

@@ -1,0 +1,215 @@
+a	9
+	Option 	FOLLOWED_BY_O 	"a" 	true  											// ao = a 	
+	Option 	FOLLOWED_BY 	's' 	"" 		false  									// as depends on characters following s
+	Option 	FOLLOWED_BY 	'z' 	"ɑz" 	true  									// az = ɑz
+	Option 	FOLLOWED_BY_I 	"" 		false  											// ai depends on next
+	Complex PRECEDED_BY_E 	FOLLOWED_BY_U 	"o" 	true 							// eau = o
+	Option 	FOLLOWED_BY_U 	"" 		false  											// au depends on next character	
+	Option 	FOLLOWED_BY 	'm' 	"" 		false  									// am depends on next character	
+	Option 	FOLLOWED_BY 	'n' 	"" 		false  									// an depends on next character	
+	Option 	DEFAULT 		"a" 	false 
+â	1	"ɑ"  
+A	1	"a" 
+b	4
+	Option 	LAST 			"" 		false  											// silent final b
+	Option 	FOLLOWED_BY 	'b' 	"b" 	true  									// bb = b
+	Option 	FOLLOWED_BY_UNVOICEDC 	"p" 	false  									// b + unvoiced cons = p + unvoiced cons
+	Option 	DEFAULT 		"b" 	false 
+c	11
+	Option 	FOLLOWED_BY 	'h' 	"ʃ" 		true  									// ch
+	Complex PRECEDED_BY 	'n' 	LAST 	"" 		false 							// final nc silent
+	Complex PRECEDED_BY 	'm' 	LAST 	"" 		false							// final mc silent
+	Option 	FOLLOWED_BY 	'c' 	"" 		false  							 		// cc - sound determined by second c 
+	Complex PRECEDED_BY 	'c' 	FOLLOWED_BY_E 	"ks" 	false  					// cce	
+	Complex PRECEDED_BY 	'c' 	FOLLOWED_BY_I 	"ks" 	false  					// cci	
+	Option 	PRECEDED_BY 	'c' 	"k" 	false  									// cca cco ccu or cc/consonant/		  	
+	Option 	FOLLOWED_BY_E 	"s" 	false  											// ce 
+	Option 	FOLLOWED_BY_I 	"s" 	false  	 										// ci
+	Option 	FOLLOWED_BY 	'y' 	"s" 	false  	 								// cy
+	Option 	DEFAULT 		"k" 	false  		
+ç	1	"s" 
+d	5
+	Option 	PRECEDED_BY 	'd' 	"" 		false  									// dd ignore second
+	Complex PRECEDED_BY_E	LAST 	"e" 	false			   						// final ed = e
+	Option 	PRECEDED_BY_E 	"ɛd" 	false   										// ed = ɛd
+	Option 	LAST 		  	"" 		false  											// silent final d
+	Option 	DEFAULT 		"d" 	false  
+e	20
+	Option 	FOLLOWED_BY_A 	"" 		false											// ea depends on next character
+	Complex PRECEDED_BY_U 	FOLLOWED_BY 	's' 	"yə" 	true 					// (final) ues = yə
+	Complex PRECEDED_BY_U 	FOLLOWED_BY_U 	"œ" 	true 							// ueu = œ
+	Complex PRECEDED_BY_O 	FOLLOWED_BY_U 	"œ" 	true 							// oeu = œ
+	Complex PRECEDED_BY_O 	FOLLOWED_BY_I 	"œ" 	true 							// oei = œ
+	Complex PRECEDED_BY_O 	FOLLOWED_BY_U 	"œ" 	true 							// oeu = œ
+	Option 	FOLLOWED_BY_U 	"" 		false 											// eu depends on next letter
+	Option 	PRECEDED_BY_O 	"ua" 	false 											// oe = ua   (wa)
+	Option 	FOLLOWED_BY 	'm' 	"" 		false									// em - depends on next char	
+	Option 	FOLLOWED_BY 	'n' 	"" 		false  									// en - depends on next char
+	Option 	FOLLOWED_BY_I 	"ɛ" 		true 											// ei = ɛ
+	Complex PRECEDED_BY 	'd' 	FOLLOWED_BY 	's' 	"e" 	false 			// des = des
+	Option 	FOLLOWED_BY 	'd' 	"" 		false 									// ed depends on next letter
+	Option 	FOLLOWED_BY 	'f' 	"" 		false 									// ef depends on next letter
+	Option 	FOLLOWED_BY 	'r' 	"" 		false 									// er depends on next char
+	Option 	FOLLOWED_BY 	'z' 	"" 		false 									// ez depends on next char
+	Option 	PRECEDED_BY_E 	"" 		false 											// ee ignore second
+	Complex SECOND_TO_LAST 	FOLLOWED_BY 	's' 	"ə" 	true 					// terminal es = ə   - simplification: does not apply to monosyllables
+	Option 	LAST 		 	"ə" 	false 											// terminal e = (optional) ə
+	Option 	DEFAULT 		"ɛ" 		false 											// follwed by non-nasal consonant
+é	1	"e"  
+è	1	"ɛ"  
+ê	1	"ɛ"  
+ë	1	"ɛ"  
+f	5
+	Option 	PRECEDED_BY 	'f' 	"" 		false  									// ff ignore second
+	Complex LAST 		 	PRECEDED_BY_E 	"e" 	false   						// final ef = e
+	Complex PRECEDED_BY_E 	FOLLOWED_BY 	'f' 	"ef" 	true 			 		// eff = ef
+	Option 	PRECEDED_BY_E 	"ɛf" 	false  											// ef = ɛf
+	Option 	DEFAULT 		"f" 	false 
+g	8
+	Option 	FOLLOWED_BY 	'g' 	"" 		false  									// gg - sound depends on second g
+	Complex PRECEDED_BY 	'g' 	FOLLOWED_BY_E 	"gʒ" 	true  					// gge = gʒ
+	Option 	FOLLOWED_BY 	'n' 	"ɲ" 	true  									// gn = ɲ
+	Option 	FOLLOWED_BY_E 	"ʒ" 		false  											// ge = ʒ
+	Option 	FOLLOWED_BY_I 	"ʒ" 		false  											// gi = ʒ
+	Option 	FOLLOWED_BY 	'y' 	"ʒ" 		false  									// gy = ʒ
+	Option 	LAST 		 	"" 		false 											// terminal g silent - simplification: some exceptions
+	Option 	DEFAULT 		"g" 	false  			
+h	1	""  
+i	10
+	Complex PRECEDED_BY_A 	LAST 	"e" 	false  									// terminal ai = e 		(simplification: actually only applies to verbs but not non-verbs)
+	Complex PRECEDED_BY_A 	FOLLOWED_BY 	'n' 	"ɛn" 	true  					// ain = ɛn
+	Complex PRECEDED_BY_A 	FOLLOWED_BY 	'm' 	"ɛm" 	true  					// aim = ɛm
+	Option 	PRECEDED_BY_A 	"ɛ" 		false  											// medial ai = ɛ 		(simplification: should be 'e' when following syllable has closed vowel)
+	Complex FOLLOWED_BY_E 	SECOND_TO_LAST 	"i" 	true  							// terminal ie = i
+	Complex FOLLOWED_BY_E 	FFOLLOWED_BY 	'r' 	"i" 	true  					// ie at end of syllable = i   (Freq followed by r)
+	Option 	FOLLOWED_BY_E 	"j" 	false  											// ie  = j + e
+	Option 	FOLLOWED_BY 	'm' 	"" 		false  									// im - depends on next char	
+	Option 	FOLLOWED_BY 	'n' 	"" 		false  									// in - depends on next char
+	Option 	DEFAULT 		"i" 	false  			
+ï	1	"i"  
+j	1	"ʒ"  
+k	1	"k"  
+l	4
+	Complex PRECEDED_BY_I 	LAST 	"j" 	false  									// il = j
+	Complex PRECEDED_BY_I 	FOLLOWED_BY 	'h' 	"j" 	true 					// ilh = j
+	Option 	PRECEDED_BY 	'l' 	"" 		false  									// ll -> ignore second l
+	Option 	DEFAULT 		"l" 	false  
+m	9
+	Option 	PRECEDED_BY_A 	"ɑ̃" 	false 											// am = ɑ̃
+	Complex PRECEDED_BY_E 	FOLLOWED_BY 	'm'  	"am" 	true   					// emm = am   //simplification: if at the start of a word should be ɑ̃m
+	Option 	PRECEDED_BY_E 	"ɑ̃" 	false 											// em = "ɑ̃"
+	Complex PRECEDED_BY_I 	FOLLOWED_BY 	'm'  	"im" 	true   					// imm = im 
+	Option 	PRECEDED_BY_I 	"ɛ̃" 		false 											// im = "ɛ̃"
+	Complex PRECEDED_BY_O 	FOLLOWED_BY 	'm'  	"ɔm" 	true   					// omm = ɔm 
+	Option 	PRECEDED_BY_O 	"õ" 	false 											// om = "õ"
+	Option 	PRECEDED_BY 	'm' 	"" 		false  									// mm =m
+	Option 	DEFAULT 		"m" 	false 
+n	13
+	Option 	PRECEDED_BY_A 	"ɑ̃" 	false 											// an = ɑ̃
+	Complex PRECEDED_BY_E 	 FOLLOWED_BY 	'n'  	"an" 	true  			 		// enn = an   //simplification: if at the start of a word should be ɑ̃n
+	Complex PRECEDED_BY_E 	 LAST 	"ɛ̃" 		false 									// terminal en = "ɛ̃"
+	Complex PRECEDED_BY_E 	 FOLLOWED_BY 	'd' 	"ɑ̃" 	true 					// end = "ɑ̃"
+	Option 	PRECEDED_BY_E 	 "ɑ̃" 	false 											// en = "ɑ̃"
+	Complex PRECEDED_BY_I 	FOLLOWED_BY 	'n'  	"in" 	true   					// inn = in 
+	Option 	PRECEDED_BY_I 	"ɛ̃" 		false 											// in = "ɛ̃"
+	Complex PRECEDED_BY_O 	FOLLOWED_BY 	'n'  	"ɔn" 	true   					// onn = ɔn 
+	Option 	PRECEDED_BY_O 	"õ" 	false 											// on = "õ"
+	Option 	PRECEDED_BY 	'n' 	"" 		false  								  	// nn ignore second
+	Option 	LAST 		 	"" 		false 											// silent terminal n
+	Option 	FOLLOWED_BY 	'g' 	"ŋ" 	true  									// ng = ŋ
+	Option 	DEFAULT 		"n" 	false  
+o	14
+	Option 	LAST 		 	 "o" 	false 											// final o = o 
+	Option 	FOLLOWED_BY_I 	'i' 	"ua" 	true  									// oi = ua		(wa)
+	Option 	FOLLOWED_BY 	'y' 	"uaj" 	true 									// oy = uaj   (waj) 
+	Option 	FOLLOWED_BY_E 	"" 		false 											// oe depends on following character
+	Option 	FOLLOWED_BY_U 	"" 		false 											// ou depends on following char
+	Option 	FOLLOWED_BY_VOWEL 		"" 		false 	 								/////// ???????
+	Option 	FOLLOWED_BY 	'm' 	"" 		false									// om - depends on next char	
+	Option 	FOLLOWED_BY 	'n' 	"" 		false  									// on - depends on next char
+	Option 	FOLLOWED_BY 	'p' 	"" 		false 									// op depends on following char
+	Option 	FOLLOWED_BY 	'r' 	"" 		false 									// or depends on following char
+	Option 	FOLLOWED_BY 	's' 	"" 		false 									// os depends on following char
+	Option 	FOLLOWED_BY 	't' 	"" 		false 									// ot depends on following char
+	Option 	FOLLOWED_BY 	'z' 	"" 		false 									// oz depends on following char
+	Option 	DEFAULT 		"ɔ" 		false  											// o followed by sounded consonant or h = ɔ   
+ô	1	"o"  
+p	9
+	Option 	PRECEDED_BY 	'p' 	"" 		false 									// pp ignore second
+	Option 	LAST 		 	"" 		false 											// silent final p 
+	Complex SECOND_TO_LAST 	FOLLOWED_BY 	's' 	"" 		true 					// silent final ps 
+	Complex	PRECEDED_BY_O	FOLLOWED_BY 	'h' 	"ɔf" 	true 					// oph = ɔf
+	Option 	FOLLOWED_BY 	'h' 	"f" 	true 									// ph = f
+	Complex LAST 		 	PRECEDED_BY_O 	"o" 	false   						// final op = o
+	Option 	PRECEDED_BY_O 	"ɔp" 	false   										// op = ɔp
+	Option 	FOLLOWED_BY 	't' 	"" 		true 									// pt =  t 	frequently - but there are many exceptions in which the p is pronounced!!
+	Option 	DEFAULT 		"p" 	false 
+q	1	"k"  
+r	6
+	Option 	PRECEDED_BY 	'r' 	"" 		false									// rr ignore second
+	Complex LAST 		 	PRECEDED_BY_E 	"e" 	false   						// final er = e
+	Option 	PRECEDED_BY_E 	"ɛr" 	false   										// er = ɛr   //Note: ier instances will be fixed in postprocessing
+	Complex LAST 		 	PRECEDED_BY_O 	 "o" 	false   						// final or = o
+	Option 	PRECEDED_BY_O 	"ɔr" 	false   										// or = ɔr
+	Option 	DEFAULT 		"r" 	false    
+s	9
+	Option 	PRECEDED_BY 	's' 	"" 		false  									// ss ignore second
+	Complex PRECEDED_BY_A 	LAST 	"ɑ" 		false  									// final as = ɑ   //Simplification: for verbs is 'a'
+	Complex PRECEDED_BY_A 	FOLLOWED_BY_VOWEL 		"ɑz" 	false  					// as<vowel> = ɑz
+	Option 	PRECEDED_BY_A 	"ɑs" 	false  											// as = ɑs
+	Complex LAST 			PRECEDED_BY_O 	"o" 	false   						// final os = o
+	Option 	PRECEDED_BY_O 	"ɔs" 	false   										// os = ɔs
+	Complex PRECEDED_BY_VOWEL 		FOLLOWED_BY_VOWEL 		"z" 	false  			// <vowel>s<vowel> = z
+	Option 	LAST 		 	"" 		false  											// final s silent
+	Option 	DEFAULT 		"s" 	false  
+t	5
+	Option 	PRECEDED_BY 	't' 	"" 		false 									// tt ignore second
+	Complex LAST 		 	PRECEDED_BY_O 	"o" 	false					   		//	final ot = o
+	Option 	FOLLOWED_BY_O 	"ɔt" 	false   										//	ot = ɔt
+	Option 	LAST 		 	"" 		false 											// final t is usually silent
+	Option 	DEFAULT 		"t" 	false 
+u	16
+	Complex PRECEDED_BY 	'q' 	FOLLOWED_BY_E 	"" 		false   				// que -> u is silent
+	Complex PRECEDED_BY 	'q' 	FOLLOWED_BY_I 	"" 		false   				// qui -> u is silent
+	Complex FOLLOWED_BY_E 	SECOND_TO_LAST 	"yə" 	true 							// final ue = yə			// when not preceded by q
+	Complex PRECEDED_BY_E 	LAST 	"ø" 	true	   								// final eu = ø
+	Complex PRECEDED_BY_E 	FOLLOWED_BY 	'x' 	"ø" 	true   					// final) eux = ø  //longer similar compositions are preprocessed
+	Option 	PRECEDED_BY_E 	"œ" 	false   										// eu = œ
+	Complex PRECEDED_BY_O 	FOLLOWED_BY_VOWEL 		"u" 	false   				// ou<vowel> = u<vowel>       //note: would be 'w' but 'w' is an allophone
+	Option 	PRECEDED_BY_O 	"u" 	false   										// ou = u
+	Option 	FOLLOWED_BY_E 	"" 		false   										// ue depends on next char
+	Complex PRECEDED_BY_A 	FOLLOWED_BY 	'r' 	"ɔ" 		false   				// aur = ɔr
+	Option 	PRECEDED_BY_A  	"o" 	false   										// au = o
+	Option 	FOLLOWED_BY 	'm' 	"œ̃" 	true   									// um = œ̃
+	Option 	FOLLOWED_BY 	'n' 	"œ̃" 	true 									//  un = œ̃ 	
+	Option 	PRECEDED_BY_VOWEL  		"u" 	false   								// <vowel>u = u ??//////////////
+	Option 	FOLLOWED_BY_VOWEL  		"u" 	false   								// u<vowel> = u ??//////////////
+	Option 	DEFAULT 		"y" 	false  											// u only vowel in syllable = y		
+ü	1	"y"  
+v	1	"v"  
+w	1	"u"  																																// foreign only sometimes u (w) sometimes v
+x	5
+	Complex LAST 		 	PRECEDED_BY 	'n' 	"ks" 	false  			 		// final nx = ks
+	Option 	LAST 		   	"" 		false  											// final x silent
+	Complex PRECEDED_BY_E 	FOLLOWED_BY_VOWEL 		"gz" 	false  					// ex/vowel/ = gz
+	Complex PRECEDED_BY_E 	FOLLOWED_BY 	'h' 	"gz" 	false   				// exh = gz
+	Option 	DEFAULT "ks" false 			// Note: when ending x is liasoned with another word starting with a vowel the x commonly sounds 'z' // it also sounds 'z' when in numerical words. These conditions are not currently taken into account.
+y	3
+	Option 	FOLLOWED_BY 	'm' 	"ɛ̃" 		true  									// ym = ɛ̃
+	Option 	FOLLOWED_BY 	'n' 	"ɛ̃" 		true  									// yn = ɛ̃
+	Option 	DEFAULT 		"i" 	true  											// y = i
+z	6
+	Complex LAST 		 	PRECEDED_BY_E 	"e" 	false   						// final ez = e
+	Option 	PRECEDED_BY_E 	"ɛz" 	false   										// ez = ɛz
+	Complex LAST 		 	PRECEDED_BY_O 	"o" 	false   						// final oz = o
+	Option 	PRECEDED_BY_O 	"ɔz" 	false   										// oz = ɔz
+	Option 	LAST 		 	"" 		false   										// final z silent
+	Option 	DEFAULT 		"z" 	false 
+ɛ	1	"ɛ"  																		// preprocessed ɛ
+J	1	"j" 																		// preprocessed j
+L	2																				// preprocessed ill
+	Option 	PRECEDED_BY_CONSONANT 	"ij" 	false  									// cons + ill = ij
+	Option 	DEFAULT 		"j" 	false 											// vowel + ill = j																					
+S	1	"s"  																		// preprocessed s
+ø	1	"ø" 																		// preprocessed ø
+œ	1	"œ" 																		// preprocessed œ

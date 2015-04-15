@@ -1,0 +1,8 @@
+.settings
+.gradle
+.classpath
+.project
+bin
+bin/convert2ipa
+bin/convert2ipa/Main.class
+build

@@ -1,0 +1,104 @@
+a	1	"a"
+á	1	"a"
+b	1	"b"
+c	11																				// in general, soft when followed by i or e, hard otherwise
+	Complex	PRECEDED_BY 	's' 	FOLLOWED_BY_E 	"ʃ" 		false  					// sce = ʃ + e
+	Complex PRECEDED_BY 	's' 	FOLLOWED_BY_I 	"ʃ" 		false  					// sci = ʃ + i
+	Option 	PRECEDED_BY 	's' 	"sk" 	false  									// sc = sk
+	Complex PRECEDED_BY 	'n' 	FOLLOWED_BY_E 	"nʧ" 	false  					// nce = nʧ + e
+	Complex PRECEDED_BY 	'n' 	FOLLOWED_BY_I 	"nʧ" 	false  					// nci = nʧ + i
+	Option 	PRECEDED_BY 	'n' 	"ŋk" 	false  									// nc = ŋk
+	Option 	FOLLOWED_BY_E 	"ʧ" 	false  											// ce = ʧ + e
+	Option 	FOLLOWED_BY_I 	"ʧ" 	false  											// ci = ʧ + i
+	Option 	FOLLOWED_BY 	'c' 	"" 		false  									// cc depends on next char (treat as one c)
+	Option 	FOLLOWED_BY 	'q' 	"k" 	true  									// cq = k
+	Option 	DEFAULT 		"k" 	false  
+d	1	"d"  		
+e	3
+	Option 	FOLLOWED_BY_U 	"e" 	false   										// eu  = eu
+	Option 	FOLLOWED_BY_VOWEL 		"ɛ" 		false  									// ea ei eo = ɛ+vowel
+	Option 	DEFAULT 		"e" 	false 
+ê	3																				// SAME as for e
+	Option 	FOLLOWED_BY_U 	"e" 	false   										// eu  = eu
+	Option 	FOLLOWED_BY_VOWEL 		"ɛ" 		false  									// ea ei eo = ɛ+vowel
+	Option 	DEFAULT 		"e" 	false  			
+é	1	"e" 																		// ? 		
+f	1	"f"  	
+g	8
+	Complex PRECEDED_BY 	'n' 	FOLLOWED_BY_E 	"nʤ" 	false   				// nge = nʤ + e
+	Complex PRECEDED_BY 	'n' 	FOLLOWED_BY_I 	"nʤ" 	false   				// ngi = nʤ + i
+	Option 	PRECEDED_BY 	'n' 	"ŋg" 	false   								// ng = ŋg
+	Option 	FOLLOWED_BY_E 	"ʤ" 	false   										// ge = ʤ + e
+	Option 	FOLLOWED_BY_I 	"ʤ" 	false   										// gi = ʤ + i
+	Option 	FOLLOWED_BY 	'h' 	"g" 	true  									// gh = g
+	Option 	FOLLOWED_BY 	'n' 	"ɲ" 	true  									// gn = ɲ
+	Option 	DEFAULT 		"g" 	false  		
+h	1	""  																		// silent
+i	3
+	Complex PRECEDED_BY 	'ʎ'  	FOLLOWED_BY_VOWEL		"" 		false  			// if gli is followed by another vowel the i is silent
+	Option 	FOLLOWED_BY_VOWEL 		"j" 	false  									//	simplification: when followed by 'ano' in verbs shoud remain 'i' also when second letter preceded by consonant & followed by vowel usually remains 'i' and sometimes when second to last letter followed by vowel stays 'i'	
+	Option 	DEFAULT 		"i" 	false  
+î'	3																				// SAME as for i
+	Complex PRECEDED_BY 	'ʎ'  	FOLLOWED_BY_VOWEL		"" 		false  			// if gli is followed by another vowel the i is silent
+	Option 	FOLLOWED_BY_VOWEL 		"j" 	false  									//	simplification: when followed by 'ano' in verbs shoud remain 'i' also when second letter preceded by consonant & followed by vowel usually remains 'i' and sometimes when second to last letter followed by vowel stays 'i'	
+	Option 	DEFAULT 		"i" 	false  
+í	1	"i"   																		// ?	
+j	4																				// foreign words only
+	Option 	FOLLOWED_BY_E 	"g" 	false  			
+	Option 	FOLLOWED_BY_I 	"g" 	false  		
+	Option 	FOLLOWED_BY_VOWEL 		"gi" 	false  	
+	Option 	DEFAULT 		"i" 	false   									
+k	1	"k"  																		// foreign words only
+l	1	"l"  		
+m	1	"m"  		
+n	7
+	Option 	FOLLOWED_BY 	'c' 	"" 		false  									// nc depends on next char
+	Option 	FOLLOWED_BY 	'g' 	"" 		false  									// ng depends on next char
+	Option 	FOLLOWED_BY 	'q' 	"ŋk" 	true  									// nq = ŋk
+	Option 	FOLLOWED_BY 	'b' 	"m" 	false  									// nb = mb  (common in speech)  //note: these should apply accross words as well but right now each word is translated seperately
+	Option 	FOLLOWED_BY 	'm' 	"m" 	true  									// nm = m  (common in speech)
+	Option 	FOLLOWED_BY 	'p' 	"m" 	false  									// np = mp  (common in speech)
+	Option 	DEFAULT 		"n" 	false  
+ñ	1	"ɲ"  		
+o	5
+	Complex PRECEDED_BY_U 	FOLLOWED_BY_VOWEL 		"ɔ" 		false 					// uo + vowel = uɔ + vowel
+	Option 	FOLLOWED_BY_A 	"ɔa" 	true  											// oa = ɔa  (note: some exceptions have oa)
+	Option 	FOLLOWED_BY_E 	"ɔe" 	true  											// oe = ɔe  (note: some exceptions have oe or oɛ)
+	Option 	FOLLOWED_BY_I 	"oi" 	true  											// oi = oi  (note: some exceptions have ɔi)
+	Option 	DEFAULT 		"o" 	false  
+ô	5																				// SAME as for o
+	Complex PRECEDED_BY_U 	FOLLOWED_BY_VOWEL 		"ɔ" 		false 					// uo + vowel = uɔ + vowel
+	Option 	FOLLOWED_BY_A 	"ɔa" 	true  											// oa = ɔa  (note: some exceptions have oa)
+	Option 	FOLLOWED_BY_E 	"ɔe" 	true  											// oe = ɔe  (note: some exceptions have oe or oɛ)
+	Option 	FOLLOWED_BY_I 	"oi" 	true  											// oi = oi  (note: some exceptions have ɔi)
+	Option 	DEFAULT 		"o" 	false  	
+ó	1	"o"  																		// ?
+p	1	"p"  					
+q	1	"k"  	  	
+r	3
+	Option 	FOLLOWED_BY 	'r' 	"rr" 	true  									// rr = rr
+	Complex PRECEDED_BY_VOWEL 		FOLLOWED_BY_VOWEL 		"ɾ" 		false  			// intervocalic r = ɾ
+	Option 	DEFAULT 		"r" 	false  											// consonant cluster r may be flipped or rolled
+s	7
+	Option 	FOLLOWED_BY 	'c' 	"" 		false  									// sc depends on next char
+	Complex PRECEDED_BY_VOWEL 		FOLLOWED_BY_VOWEL 		"z" 	false  			// vowel + s + vowel = z
+	Option 	FOLLOWED_BY_VOWEL 		"s" 	false  									// s+vowel = s
+	Option 	PRECEDED_BY_CONSONANT 	"s" 	false  									// consonant + s = s
+	Option 	LAST 					"s" 	false  									// terminal s = s
+	Option 	FOLLOWED_BY_UNVOICEDC 	"s" 	false  									// s + unvoiced consonant = s
+	Option 	DEFAULT 				"z"	 	false  									// s + voiced consonant = z 			
+t	1	"t" 
+u	1	"u"   																		// note: pronunciation as 'w' is just an allophone for 'u'?
+ú	1	"u"  												
+ü	1	"u"  		
+û	1	"u" 
+v	1	"v"  	
+w	1	"u"  																		// foreign words only   // ?
+x	1	"ks" 																		// foreign words only
+y	1	"i"  																		// foreign words only
+z	4
+	Complex PRECEDED_BY_VOWEL		FOLLOWED_BY 	'i' 	"ts" 	false  			// intervocalic z followed by i is voiced
+	Complex PRECEDED_BY_VOWEL 		FOLLOWED_BY_VOWEL 		"dz" 	false  			// intervocalic z not followed by i is not voiced
+	Option 	FIRST 			"dz" 	false 											// starting z is usually voiced
+	Option 	DEFAULT 		"ts" 	false  											// default unvoiced. note: zz is usually unvoiced but in some cases it is voiced  	
+ʎ	1	"ʎ" 																			// preprocessed 'gli'

@@ -1,0 +1,65 @@
+a	1	"a" 
+á	1	"a" 
+b	1	"b" 
+c	7
+	Option	FOLLOWED_BY		'c'		"ks"	true									// cc = ks				
+	Option 	FOLLOWED_BY 	'h' 	"ʧ" 	true					 				// ch = ʧ
+	Complex PRECEDED_BY 	's' 	FOLLOWED_BY_E 	"" 		false					// sce (adding 's' is redundant)
+	Complex PRECEDED_BY 	's' 	FOLLOWED_BY_I 	"" 		false 					// sci (adding 's' is redundant)
+	Option 	FOLLOWED_BY_E 	"s" 	false  											// ce 
+	Option 	FOLLOWED_BY_I 	"s" 	false  											// ci
+	Option 	DEFAULT 		"k" 	false  
+d	1	"d"  
+e	1	"e"  
+é	1	"e"  
+f	1	"f"  
+g	3
+	Option 	FOLLOWED_BY_E 	"x" 	false   
+	Option 	FOLLOWED_BY_I 	"x" 	false  
+	Option 	DEFAULT 		"g" 	false 					 						// followed by 'a' 'o' 'u' 'r' 'l' etc.
+h	1	""  																		// silent
+i	8
+	Option 	PRECEDED_OR_FOLLOWED_BY	'a' 	"y" 	false  							// ai or ia = y + a
+	Option 	PRECEDED_OR_FOLLOWED_BY 'á' 	"y" 	false  
+	Option 	PRECEDED_OR_FOLLOWED_BY 'e' 	"y" 	false  							// ei or ie = y + e
+	Option 	PRECEDED_OR_FOLLOWED_BY 'é' 	"y" 	false  
+	Option 	PRECEDED_OR_FOLLOWED_BY 'o' 	"y" 	false  							// oi or io = y + o
+	Option 	PRECEDED_OR_FOLLOWED_BY 'ó' 	"y" 	false  
+	Option 	FOLLOWED_BY_U 	"y" 	false  			  								// iu = y + u			  
+	Option 	DEFAULT 		"i" 	false  
+í	1	"i"  
+j	1	"x"  
+k	1	"k"  
+l	2
+	Option 	FOLLOWED_BY 	'l' 	"ʎ" 		true  									// ll = ʎ,  Note: ʝ in some regions
+	Option 	DEFAULT 		"l" 	false  
+m	2
+	Option 	FOLLOWED_BY_VOWEL 		"m" 	false  
+	Option 	DEFAULT 		"n" 	false  
+n	2  
+	Option 	FOLLOWED_BY 	'g' 	"ŋ" 	false  
+	Option 	DEFAULT 		"n" 	false  
+ñ	1	"ɲ"  
+o	1	"o"  
+ó	1	"o"  
+p	1	"p"  
+q	1	"k"  	  
+r	2
+	Option 	FOLLOWED_BY 	'r' 	"r" 	true  									// rr
+	Option 	DEFAULT 		"ɾ" 		false  
+s	1	"s"  
+t	1	"t"  																		// Note: 'th' pronounced 't'	  
+u	3
+	Complex	PRECEDED_BY 	'q' 	FOLLOWED_BY_E 	""		false  					// Silent u
+	Complex PRECEDED_BY 	'q' 	FOLLOWED_BY_I 	"" 		false  					// Silent u
+	Option 	DEFAULT 		"u" 	false  
+ú	1	"u"  
+ü	1	"u"  
+v	1	"b"  
+w	1	"u"  																		// w is allophone for u
+x	1	"ks" 
+y	2
+	Complex	FIRST 			LAST 	"i" 			false  
+	Option	DEFAULT 		"ʝ" 		false  
+z	1	"s"  
+

@@ -1,0 +1,173 @@
+#### http://en.wikipedia.org/wiki/Latin_spelling_and_pronunciation
+#### VOX LATINA, W. Sidney Allen
+
+#### CLASSICAL LATIN IPA CONVERTER
+
+
+
+
+vow := [aáàâäeéèêëiíìîïoóòôöuúùûüv]
+cons := [ctkgpnmrlfshxz]
+velar := [ckg]
+
+
+
+####
+## CONSONANTS
+####
+
+
+##
+# Voiceless plosives
+##
+
+# labio-velar, TODO actually k^w /kw/
+{qu,qv} -> kw
+
+# some uncertainty about forms like quum exist (might be like /kum/)
+# but the above also accepted
+# always a velar plosive before the fifth century
+c -> k
+
+t -> t
+
+# The letter K was in early Latin regularly used for /k/ before /a/ 
+# but in classical times had been replaced by C except in a very small 
+# number of words.
+k -> k
+
+
+##
+# Voiced plosives
+##
+
+# by graphic parallelism with qu:  TODO: actually g^w
+/{gu,gv}/$vow -> gw
+# Some nasalizations rules
+#/ng/n -> ŋ   # congnatus pronunced /koŋnatus/
+#/g/n -> ŋ
+
+g -> g
+
+##
+# Aspirates
+##
+
+# mostly from greek loan words
+# Latin had no aspirated consonants and so these digraphs tended to be 
+# pronounced like P (and later F), T, and K
+ph -> p
+ch -> k
+th -> t
+
+##
+# Nasals
+##
+
+n -> n
+
+
+# this is not the full story, 
+# It is likely that, by the Classical period, /m/ at the end of words was 
+# pronounced weakly, either voiceless or simply by nasalizing (and lengthening) 
+# the preceding vowel. For instance decem ("ten") was probably pronounced 
+# [ˈdekẽː]. In addition to the metrical features of Latin poetry, the fact that 
+# all such endings lost the final M in the descendant Romance languages 
+# strengthens this hypothesis. For simplicity, and because this is not 
+# known for certain, M is just treated as the consonant /m/ here and in 
+# other references.
+m -> m
+
+##
+# Liquids
+##
+
+l -> l
+r -> r
+
+##
+# Fricatives
+##
+
+f -> f
+s -> s 	
+
+##
+# Semivowels
+##
+
+
+# mirrored by u...
+$vow/{v,u}/$vow -> w
+_/{v,u}/$vow -> w # u-consonant
+
+h -> h
+
+##
+# Foreign
+##
+
+x -> ks
+$vow/z/$vow -> zz
+z -> z
+
+
+####
+## VOWELS
+####
+
+##
+# Rules to distinguish long and short vowels
+##
+
+# TODO: depends on nominal, adjectival and verbal paradigms
+# for now, always use long ones (more frequent)
+
+i -> i
+e -> e
+{v,u} -> u  # consonant case already covered above
+o -> o
+a -> a
+
+
+## actually, long (xː) for the ones below
+#/i/ns -> i 
+#/e/ns -> e
+#/a/ns -> a
+#/{u,v}/ns -> u
+#/o/ns -> o
+#
+#/i/nf -> i 
+#/e/nf -> e
+#/a/nf -> a
+#/{u,v}/nf -> u
+#/o/nf -> o
+#
+#/i/nct -> i 
+#/e/nct -> e
+#/a/nct -> a
+#/{u,v}/nct -> u
+#/o/nct -> o
+#
+#/i/nx -> i 
+#/e/nx -> e
+#/a/nx -> a
+#/{u,v}/nx -> u
+#/o/nx -> o
+#
+#/i/sc -> i 
+#/e/sc -> e
+#/a/sc -> a
+#/{u,v}/sc -> u
+#/o/sc -> o
+#
+## TODO: before x, ps, complicated
+# ..... more information would be required
+
+
+
+##
+# Foreign
+##
+
+y -> y
